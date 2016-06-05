@@ -31,6 +31,7 @@ cacheSolve <- function(x, ...) {
                 return(m)
                 }
         data <- x$getMatrix()
+		if (nrow(data) != ncol(data)) return("matrix cannot be inversed")
         m <- solve(data)
         x$setInverseMatrix(m)
         m
